@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+# Tic Tac Toe Game 🎮
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Mô tả Dự án
 
-## Available Scripts
+Đây là một ứng dụng Tic Tac Toe (Cờ Caro) được xây dựng bằng **React** và sử dụng **TypeScript** để tăng tính an toàn cho mã nguồn. Dự án này được phát triển với giao diện thân thiện, có khả năng chọn cấp độ chơi từ dễ đến khó, tích hợp AI sử dụng thuật toán Minimax cho chế độ khó, mang lại trải nghiệm chơi phong phú và thử thách.
 
-In the project directory, you can run:
+### Các tính năng chính
 
-### `npm start`
+- Chơi đơn (Single Player) với chế độ AI nhiều cấp độ: Dễ, Trung Bình, và Khó.
+- Giao diện trực quan và hiện đại.
+- Docker image sẵn sàng để triển khai nhanh chóng.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Công nghệ sử dụng
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **React** với **TypeScript** cho front-end.
+- **Docker** để đóng gói và triển khai.
+- **Nginx** phục vụ ứng dụng khi chạy trong Docker container.
 
-### `npm test`
+## Hướng dẫn chạy ứng dụng
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Chạy trên Docker
 
-### `npm run build`
+#### Yêu cầu
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Docker đã được cài đặt trên máy.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Các bước chạy
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Pull Docker Image**: Pull Docker image từ Docker Hub.
 
-### `npm run eject`
+   ```bash
+   docker pull xuanphuc2002/xuanphuc-tic-toc-toe
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. **Chạy Docker Container**: Chạy Docker container với image vừa pull.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   docker run -d -p 8080:80 xuanphuc2002/xuanphuc-tic-toc-toe
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. **Truy cập ứng dụng**: Mở trình duyệt và truy cập vào [localhost:8080](http://localhost:8080) để chơi Tic Tac Toe.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 2. Chạy trên Vercel
 
-## Learn More
+**Truy cập ứng dụng**: Mở trình duyệt và truy cập vào [tic-tac-toe-game.vercel.app](https://draphony-tic-toc-toe.vercel.app/) để chơi Tic Tac Toe.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Link Docker Image
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Docker Hub](https://hub.docker.com/r/xuanphuc2002/xuanphuc-tic-toc-toe)
+
+### 4. Thông tin cá nhân
+
+- Tác giả: Ngô Lê Xuân Phúc
+- Email: phuc.ngolexuan@gmail.com
