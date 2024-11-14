@@ -1,54 +1,54 @@
 # Tic Tac Toe Game 🎮
 
-### Mô tả Dự án
+### Project Description
 
-Đây là một ứng dụng Tic Tac Toe (Cờ Caro) được xây dựng bằng **React** và sử dụng **TypeScript** để tăng tính an toàn cho mã nguồn. Dự án này được phát triển với giao diện thân thiện, có khả năng chọn cấp độ chơi từ dễ đến khó, tích hợp AI sử dụng thuật toán Minimax cho chế độ khó, mang lại trải nghiệm chơi phong phú và thử thách.
+This is a Tic Tac Toe application built with **ReactJs** and **TypeScript** to ensure code safety. The project features a user-friendly interface with selectable difficulty levels from easy to hard, integrating AI with the Minimax algorithm for the hard mode, providing a rich and challenging gameplay experience.
 
-### Các tính năng chính
+### Key Features
 
-- Chơi đơn (Single Player) với chế độ AI nhiều cấp độ: Dễ, Trung Bình, và Khó.
-- Giao diện trực quan và hiện đại.
-- Docker image sẵn sàng để triển khai nhanh chóng.
+- Single-player mode with AI difficulty levels: Easy, Medium, and Hard.
+- Modern and intuitive user interface.
+- Docker image ready for quick deployment.
 
-### Công nghệ sử dụng
+### Technologies Used
 
-- **React** với **TypeScript** cho front-end.
-- **Docker** để đóng gói và triển khai.
-- **Nginx** phục vụ ứng dụng khi chạy trong Docker container.
+- **React** with **TypeScript** for front-end.
+- **Docker** for packaging and deployment.
+- **Nginx** to serve the application when running in a Docker container.
 
-## Hướng dẫn chạy ứng dụng
+## How to Run the Application
 
-### 1. Chạy trên Docker
+### 1. Run on Docker
 
-#### Yêu cầu
+#### Requirements
 
-- Docker đã được cài đặt trên máy.
+- Docker installed on your machine.
 
-#### Các bước chạy
+#### Steps to Run
 
-1. **Pull Docker Image**: Pull Docker image từ Docker Hub.
+1. **Pull Docker Image**: Pull the Docker image from Docker Hub.
 
    ```bash
    docker pull xuanphuc2002/xuanphuc-tic-toc-toe
    ```
 
-2. **Chạy Docker Container**: Chạy Docker container với image vừa pull.
+2. **Run Docker Container**: Start the Docker container with the pulled image.
 
    ```bash
    docker run -d -p 8080:80 xuanphuc2002/xuanphuc-tic-toc-toe
    ```
 
-3. **Truy cập ứng dụng**: Mở trình duyệt và truy cập vào [localhost:8080](http://localhost:8080) để chơi Tic Tac Toe.
+3. **Access the Application**: Open your browser and go to [localhost:8080](http://localhost:8080) to play Tic Tac Toe.
 
-### 2. Chạy trên Vercel
+### 2. Run on Vercel
 
-**Truy cập ứng dụng**: Mở trình duyệt và truy cập vào [tic-tac-toe-game.vercel.app](https://draphony-tic-toc-toe.vercel.app/) để chơi Tic Tac Toe.
+**Access the Application**: Open your browser and go to [tic-tac-toe-game.vercel.app](https://draphony-tic-toc-toe.vercel.app/) to play Tic Tac Toe.
 
-### 3. Link Docker Image
+### 3. Docker Image Link
 
 - [Docker Hub](https://hub.docker.com/r/xuanphuc2002/xuanphuc-tic-toc-toe)
 
-### 4. Thông tin cá nhân
+### 4. Personal Information
 
-- Tác giả: Ngô Lê Xuân Phúc
+- Author: Ngô Lê Xuân Phúc
 - Email: phuc.ngolexuan@gmail.com
