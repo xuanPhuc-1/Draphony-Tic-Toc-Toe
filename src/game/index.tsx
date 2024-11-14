@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import Board from "./components/Board";
 import Status from "./components/Status";
 import ResetButton from "./components/ResetButton";
-import { findBestMove } from "../utils/minimax";
+import { findBestMove, getMediumAIMove, getRandomMove } from "../utils/minimax";
 import "./index.scss";
+import LevelDropDown from "./components/LevelDropDown";
 const Game: React.FC = () => {
   type Player = "X" | "O" | null;
   const [board, setBoard] = useState<Player[]>(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
   const [status, setStatus] = useState("Next player: X");
+  const [level, setLevel] = useState("easy");
 
   const calculateWinner = (squares: (string | null)[]) => {
     const lines = [
@@ -47,7 +49,16 @@ const Game: React.FC = () => {
   useEffect(() => {
     // Hàm thực hiện nước đi của AI
     const handleAIMove = () => {
-      const bestMove = findBestMove(board);
+      let bestMove: number;
+
+      if (level === "easy") {
+        bestMove = getRandomMove(board);
+      } else if (level === "medium") {
+        bestMove = getMediumAIMove(board);
+      } else {
+        bestMove = findBestMove(board);
+      }
+
       if (bestMove === -1) return;
 
       const squares = [...board];
@@ -67,7 +78,7 @@ const Game: React.FC = () => {
         handleAIMove();
       }
     }
-  }, [board, isXNext]);
+  }, [board, isXNext, level]);
 
   const resetGame = () => {
     setBoard(Array(9).fill(null));
@@ -75,8 +86,14 @@ const Game: React.FC = () => {
     setStatus("Next player: X");
   };
 
+  const handleLevelChange = (newLevel: string) => {
+    setLevel(newLevel);
+    resetGame();
+  };
+
   return (
     <div className="game">
+      <LevelDropDown onLevelChange={handleLevelChange} />
       <Status status={status} />
       <Board board={board} onClick={handleClick} />
       <ResetButton onReset={resetGame} />

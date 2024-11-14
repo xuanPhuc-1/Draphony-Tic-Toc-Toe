@@ -1,6 +1,47 @@
 type Player = "X" | "O" | null;
 // Định nghĩa kiểu Player, có thể là "X", "O" hoặc null (chưa có người đánh vào ô đó)
 
+// Hàm lấy nước đi ngẫu nhiên cho mức độ dễ
+export function getRandomMove(board: Player[]): number {
+  const emptySquares = board
+    .map((value, index) => (value === null ? index : null))
+    .filter((val) => val !== null) as number[];
+
+  if (emptySquares.length === 0) return -1;
+
+  const randomIndex = Math.floor(Math.random() * emptySquares.length);
+  return emptySquares[randomIndex];
+}
+
+// Hàm lấy nước đi cho mức độ trung bình
+export function getMediumAIMove(board: Player[]): number {
+  // Trước tiên, kiểm tra xem AI có thể thắng ở nước đi tiếp theo không
+  const winningMove = findWinningMove(board, "O");
+  if (winningMove !== -1) return winningMove;
+
+  // Nếu không, kiểm tra xem người chơi có thể thắng ở nước đi tiếp theo không và chặn lại
+  const blockingMove = findWinningMove(board, "X");
+  if (blockingMove !== -1) return blockingMove;
+
+  // Nếu không, chọn nước đi ngẫu nhiên
+  return getRandomMove(board);
+}
+
+// Hàm tìm nước đi có thể thắng
+function findWinningMove(board: Player[], player: Player): number {
+  for (let i = 0; i < board.length; i++) {
+    if (board[i] === null) {
+      board[i] = player;
+      if (evaluateBoard(board) === (player === "X" ? 1 : -1)) {
+        board[i] = null;
+        return i;
+      }
+      board[i] = null;
+    }
+  }
+  return -1;
+}
+
 // Hàm đánh giá trạng thái cuối cùng
 function evaluateBoard(board: Player[]): number {
   // Định nghĩa các tổ hợp chiến thắng có thể có trên bảng Tic Tac Toe
