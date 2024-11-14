@@ -45,4 +45,11 @@
   &.O {
     color: #fd74fc; // Màu hồng cho O
   }
+
+  &.highlight {
+    background-color: #2a8f9d; /* Màu xanh đậm hơn để làm nổi bật */
+    color: #ffffff; /* Màu trắng cho X hoặc O */
+    border-color: #b25b9e; /* Màu viền tím đậm để tạo hiệu ứng nổi bật */
+    box-shadow: 0 0 5px #b25b9e, 0 0 10px #b25b9e; /* Giảm độ sáng của hiệu ứng bóng */
+  }
 }

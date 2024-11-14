@@ -4,13 +4,21 @@ import "./index.scss";
 interface SquareProps {
   value: string | null;
   onClick: () => void;
-  number: number; // Thêm prop number để sử dụng làm bóng mờ
+  number: number;
+  highlight: boolean; // Thêm prop highlight để đánh dấu ô chiến thắng
 }
 
-const Square: React.FC<SquareProps> = ({ value, onClick, number }) => {
+const Square: React.FC<SquareProps> = ({
+  value,
+  onClick,
+  number,
+  highlight,
+}) => {
   return (
     <div
-      className={`square ${value ? "filled" : ""} ${value}`} // Thêm lớp 'filled' khi có giá trị
+      className={`square ${value ? "filled" : ""} ${value} ${
+        highlight ? "highlight" : ""
+      }`}
       onClick={onClick}
       data-number={number}
     >

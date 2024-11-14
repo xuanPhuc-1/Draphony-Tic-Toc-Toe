@@ -5,9 +5,10 @@ import "./index.scss";
 interface BoardProps {
   board: (string | null)[];
   onClick: (index: number) => void;
+  winningLine: number[] | null; // Thêm winningLine
 }
 
-const Board: React.FC<BoardProps> = ({ board, onClick }) => {
+const Board: React.FC<BoardProps> = ({ board, onClick, winningLine }) => {
   return (
     <div className="board">
       {board.map((value, index) => (
@@ -15,9 +16,13 @@ const Board: React.FC<BoardProps> = ({ board, onClick }) => {
           key={index}
           value={value}
           onClick={() => onClick(index)}
-          number={index + 1} // Truyền số từ 1 đến 9
+          number={index + 1}
+          highlight={winningLine?.includes(index) ?? false} // Kiểm tra nếu ô này thuộc đường thắng
         />
       ))}
+      {winningLine && (
+        <div className={`winning-line line-${winningLine.join("-")}`} />
+      )}
     </div>
   );
 };
