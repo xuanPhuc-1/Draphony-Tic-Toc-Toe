@@ -12,7 +12,7 @@ const LevelDropDown: React.FC<LevelDropDownProps> = ({ onLevelChange }) => {
 
   return (
     <div className="level-dropdown">
-      <label htmlFor="level">Choose difficulty level: </label>
+      <h4 className="level">Choose difficulty level:</h4>
       <select id="level" onChange={handleChange}>
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>

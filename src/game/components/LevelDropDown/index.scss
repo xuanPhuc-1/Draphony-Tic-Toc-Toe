@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  gap: 10px;
 
   label {
     font-size: 16px;
@@ -25,4 +26,11 @@
       border-color: $primary-color;
     }
   }
+}
+
+.level {
+  font-size: 16px;
+  font-weight: bold;
+  color: $secondary-color;
+  text-shadow: 0 0 10px $secondary-color;
 }
