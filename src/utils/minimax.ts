@@ -76,6 +76,7 @@ export function findBestMove(board: Player[]): number {
       // Nếu ô đang trống
       board[i] = "O"; // Thử đặt O vào ô trống
       const score = minimax(board, 0, true); // Gọi hàm minimax để tính điểm cho nước đi này
+      console.log(i, score);
       board[i] = null; // Trả ô về trạng thái trống
 
       // Nếu điểm của nước đi này nhỏ hơn bestScore, cập nhật bestScore và nước đi tốt nhất
