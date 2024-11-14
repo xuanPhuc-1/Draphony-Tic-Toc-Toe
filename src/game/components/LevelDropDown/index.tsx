@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.scss";
+
 interface LevelDropDownProps {
   onLevelChange: (level: string) => void;
 }
@@ -11,11 +12,11 @@ const LevelDropDown: React.FC<LevelDropDownProps> = ({ onLevelChange }) => {
 
   return (
     <div className="level-dropdown">
-      <label htmlFor="level">Chọn mức độ khó: </label>
+      <label htmlFor="level">Choose difficulty level: </label>
       <select id="level" onChange={handleChange}>
-        <option value="easy">Dễ</option>
-        <option value="medium">Trung bình</option>
-        <option value="hard">Khó</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
       </select>
     </div>
   );
