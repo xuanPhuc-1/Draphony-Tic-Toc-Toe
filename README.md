@@ -42,11 +42,11 @@ This is a Tic Tac Toe application built with **ReactJs** and **TypeScript** to e
 
 ### 2. Run on Vercel
 
-**Access the Application**: Open your browser and go to [tic-tac-toe-game.vercel.app](https://draphony-tic-toc-toe.vercel.app/) to play Tic Tac Toe.
+**Access the Application**: Open your browser and go to <a href="https://draphony-tic-toc-toe.vercel.app/" target="_blank">tic-tac-toe-game.vercel.app</a> to play Tic Tac Toe.
 
 ### 3. Docker Image Link
 
-- [Docker Hub](https://hub.docker.com/r/xuanphuc2002/xuanphuc-tic-toc-toe)
+- <a href="https://hub.docker.com/r/xuanphuc2002/xuanphuc-tic-toc-toe" target="_blank">Docker Hub</a>
 
 ### 4. Personal Information
 
