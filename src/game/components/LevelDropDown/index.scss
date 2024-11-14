@@ -1,13 +1,28 @@
+@import "/src/game/variables.scss";
+
 .level-dropdown {
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 
   label {
-    margin-right: 5px;
-    font-weight: bold;
+    font-size: 16px;
+    margin-right: 8px;
+    color: $text-color;
   }
 
   select {
     padding: 5px;
     font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid $secondary-color;
+    background-color: $dark-background;
+    color: $primary-color;
+    cursor: pointer;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $primary-color;
+    }
   }
 }

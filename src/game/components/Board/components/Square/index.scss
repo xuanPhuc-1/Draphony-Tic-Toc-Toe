@@ -1,7 +1,48 @@
+@import "/src/game/variables.scss";
+
 .square {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   font-size: 24px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   cursor: pointer;
+  background-color: #222;
+  border: 2px solid #fd74fc;
+  transition: background-color 0.3s, transform 0.2s;
+
+  &:hover {
+    background-color: #350635;
+    transform: scale(1.05);
+  }
+
+  &::before {
+    content: attr(data-number); // Hiển thị số bóng mờ từ data-number
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.119); // Màu bóng mờ
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  /* Khi có giá trị (X hoặc O), ẩn bóng mờ */
+  &.filled::before {
+    opacity: 0; // Ẩn bóng mờ khi ô có giá trị
+  }
+
+  /* Màu sắc cho X và O */
+  &.X {
+    color: #40fffe; // Màu xanh cho X
+  }
+
+  &.O {
+    color: #fd74fc; // Màu hồng cho O
+  }
 }

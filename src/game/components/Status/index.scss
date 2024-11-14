@@ -1,5 +1,8 @@
+@import "/src/game/variables.scss";
+
 .status {
   font-size: 18px;
   font-weight: bold;
+  color: $secondary-color;
   margin-bottom: 10px;
 }

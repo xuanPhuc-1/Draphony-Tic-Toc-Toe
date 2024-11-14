@@ -7,7 +7,7 @@ interface ResetButtonProps {
 const ResetButton: React.FC<ResetButtonProps> = ({ onReset }) => {
   return (
     <button className="reset-button" onClick={onReset}>
-      Reset Game
+      <p>Reset Game</p>
     </button>
   );
 };

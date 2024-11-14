@@ -93,6 +93,9 @@ const Game: React.FC = () => {
 
   return (
     <div className="game">
+      <div className="game-title">
+        <h1>Tic Tac Toe</h1>
+      </div>
       <LevelDropDown onLevelChange={handleLevelChange} />
       <Status status={status} />
       <Board board={board} onClick={handleClick} />
